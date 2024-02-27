@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PurchaseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/purchase');
 });
+
+Route::resources([
+    'purchase' => PurchaseController::class
+]);
